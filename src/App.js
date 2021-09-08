@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { BrowserRouter } from 'react-router-dom';
+import { Switch,Route } from 'react-router';
+import AquaPark from './components/AquaPark';
+import Beach from './components/Beach';
+import Sanatorium from './components/Sanatorium';
+import Footer from './components/footer/Footer';
+import Header from './components/header/Header';
+import Main from './components/main/Main';
+import SimpleHeader from './components/header/SimpleHeader';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>       
+      <Switch>
+        <Route exact path="/"><Header/><Main/></Route>        
+        <Route path="/beach"><SimpleHeader/><Beach/></Route>
+        <Route path="/aqua"><SimpleHeader/><AquaPark/></Route>
+        <Route path="/sanatorium"><SimpleHeader/><Sanatorium/></Route>
+      </Switch>
+      <Footer/>
+    </BrowserRouter>
   );
 }
 

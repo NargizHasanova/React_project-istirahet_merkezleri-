@@ -1,0 +1,106 @@
+@import '../../assets/scss/variables';
+
+main {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    .main__top {
+        margin-top: 50px;
+
+        .more__info {
+            text-align: center;
+            cursor: pointer;
+
+            span {
+                color: #938B8B;
+
+                &:hover {
+                    color: #706C6C;
+                }
+            }
+
+            i {
+                font-size: 20px;
+                margin-right: 10px;
+                color: #706C6C;
+            }
+        }
+    }
+
+    .title {
+        position: relative;
+        text-align: center;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    hr {
+        position: absolute;
+        width: 100px;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+        height: 2px;
+        border: none;
+        background-color: $mainColor;
+        margin-top: 5px;
+    }
+
+
+    .beach__cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 40px;
+
+
+        &--item {
+            width: 30%;
+            margin-bottom: 30px;
+            background-color: #DBD5D0;
+
+            figure {
+                position: relative;
+                height: 150px;
+                border-bottom: 1px solid $mainColor;
+
+                .like {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    color: #fff;
+                    font-size: 20px;
+                    cursor: pointer;
+                }
+            }
+
+            h3 {
+                padding: 10px;
+            }
+
+            .rate {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 10px 10px 10px;
+
+                button a {
+                    font-weight: 600;
+                    font-size: 13px;
+                    color: $mainColor;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+    }
+}

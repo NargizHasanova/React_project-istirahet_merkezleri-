@@ -1,0 +1,46 @@
+@import './assets/scss/_variables';
+@import './assets/scss/_mixins';
+@import './components/header/_header.scss';
+@import './components/main/_main.scss';
+@import './components/footer/_footer.scss';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+}
+
+body {
+    background-color: #F7F2ED;
+}
