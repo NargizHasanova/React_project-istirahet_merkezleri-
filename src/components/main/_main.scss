@@ -1,9 +1,6 @@
 @import '../../assets/scss/variables';
 
 main {
-    max-width: 1000px;
-    width: 100%;
-    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,6 +8,8 @@ main {
     margin-top: 30px;
 
     .main__top {
+        max-width: 1000px;
+        width: 100%;
         margin-top: 50px;
 
         .more__info {

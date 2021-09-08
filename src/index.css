@@ -29,6 +29,7 @@ header .header__top {
       -ms-flex-align: center;
           align-items: center;
   z-index: 1;
+  margin-bottom: 10px;
 }
 
 header .header__top form input {
@@ -95,13 +96,12 @@ header .header__top--add span {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  margin-top: 10px;
 }
 
 .header__bottom nav {
   background-color: #F48B0E;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.22);
   padding: 20px;
   z-index: 2;
 }
@@ -176,9 +176,6 @@ header .header__top--add span {
 }
 
 main {
-  max-width: 1000px;
-  width: 100%;
-  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -196,6 +193,8 @@ main {
 }
 
 main .main__top {
+  max-width: 1000px;
+  width: 100%;
   margin-top: 50px;
 }
 

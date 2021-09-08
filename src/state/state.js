@@ -51,6 +51,24 @@ export const beach =[
         title:"Amburan Beach",
         desc:`Bu kompleksə həftəsonu giriş 25 manat, həftəiçi isə 20 manatdır. Qiymətə çimərlik aksesuarlarından istifadə də daxildir.` 
     },
+    {
+        id:7,
+        img:amburan1,
+        title:"Amburan Beach",
+        desc:`Bu kompleksə həftəsonu giriş 25 manat, həftəiçi isə 20 manatdır. Qiymətə çimərlik aksesuarlarından istifadə də daxildir.` 
+    },
+    {
+        id:8,
+        img:amburan1,
+        title:"Amburan Beach",
+        desc:`Bu kompleksə həftəsonu giriş 25 manat, həftəiçi isə 20 manatdır. Qiymətə çimərlik aksesuarlarından istifadə də daxildir.` 
+    },
+    {
+        id:9,
+        img:amburan1,
+        title:"Amburan Beach",
+        desc:`Bu kompleksə həftəsonu giriş 25 manat, həftəiçi isə 20 manatdır. Qiymətə çimərlik aksesuarlarından istifadə də daxildir.` 
+    },
 ]  
             
 export const aquaPark= [
@@ -88,6 +106,24 @@ export const aquaPark= [
         },
         {
             id:6,
+            img:dalga3,
+            title:'Nar & Sharab',
+            desc:`"Nar & Sharab" restoranının xidmətlərindən istifadə etmək mümkündür. Girişin qiyməti 20 AZN-dir. Bu məbləğə hovuz, duş kabinəsi, "lejanka", dəsmal daxildir. 6 yaşınadək uşaqlara giriş pulsuzdur. `
+        },
+        {
+            id:7,
+            img:dalga3,
+            title:'Nar & Sharab',
+            desc:`"Nar & Sharab" restoranının xidmətlərindən istifadə etmək mümkündür. Girişin qiyməti 20 AZN-dir. Bu məbləğə hovuz, duş kabinəsi, "lejanka", dəsmal daxildir. 6 yaşınadək uşaqlara giriş pulsuzdur. `
+        },
+        {
+            id:8,
+            img:dalga3,
+            title:'Nar & Sharab',
+            desc:`"Nar & Sharab" restoranının xidmətlərindən istifadə etmək mümkündür. Girişin qiyməti 20 AZN-dir. Bu məbləğə hovuz, duş kabinəsi, "lejanka", dəsmal daxildir. 6 yaşınadək uşaqlara giriş pulsuzdur. `
+        },
+        {
+            id:9,
             img:dalga3,
             title:'Nar & Sharab',
             desc:`"Nar & Sharab" restoranının xidmətlərindən istifadə etmək mümkündür. Girişin qiyməti 20 AZN-dir. Bu məbləğə hovuz, duş kabinəsi, "lejanka", dəsmal daxildir. 6 yaşınadək uşaqlara giriş pulsuzdur. `
@@ -137,6 +173,30 @@ export const sanatorium =[
     },
     {
         id:6,
+        img:naf1,
+        title:'Naftalan sanatoriyası',
+        desc:`"Tam pansiyon: səhər, nahar və şam yeməkləri, və həmçinin check up və naftalan nefti ilə müalicələr, Fizioterapiya müayinəsi,massaj,idman müalicəsi(müəllim ilə) qiymətə daxildir.`,
+        map:'Naftalan şəhəri, Şirvan prospekti 31',
+        num:'050-570-20-00',
+    },
+    {
+        id:7,
+        img:naf1,
+        title:'Naftalan sanatoriyası',
+        desc:`"Tam pansiyon: səhər, nahar və şam yeməkləri, və həmçinin check up və naftalan nefti ilə müalicələr, Fizioterapiya müayinəsi,massaj,idman müalicəsi(müəllim ilə) qiymətə daxildir.`,
+        map:'Naftalan şəhəri, Şirvan prospekti 31',
+        num:'050-570-20-00',
+    },
+    {
+        id:8,
+        img:naf1,
+        title:'Naftalan sanatoriyası',
+        desc:`"Tam pansiyon: səhər, nahar və şam yeməkləri, və həmçinin check up və naftalan nefti ilə müalicələr, Fizioterapiya müayinəsi,massaj,idman müalicəsi(müəllim ilə) qiymətə daxildir.`,
+        map:'Naftalan şəhəri, Şirvan prospekti 31',
+        num:'050-570-20-00',
+    },
+    {
+        id:9,
         img:naf1,
         title:'Naftalan sanatoriyası',
         desc:`"Tam pansiyon: səhər, nahar və şam yeməkləri, və həmçinin check up və naftalan nefti ilə müalicələr, Fizioterapiya müayinəsi,massaj,idman müalicəsi(müəllim ilə) qiymətə daxildir.`,
