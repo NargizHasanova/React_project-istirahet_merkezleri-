@@ -1,6 +1,7 @@
-import { beach } from '../state/state'
+import { beach } from '../../state/state'
 import { Link } from 'react-router-dom'
-import './main/_main.scss'
+import '../main/_main.scss'
+
 
 export default function Beach() {
     return (
@@ -17,7 +18,7 @@ export default function Beach() {
                                 </figure>
                                 <h3>{item.title}</h3>
                                 <div className="rate">
-                                    <button><Link to="/">Ətraflı</Link></button>
+                                    <button><Link to={`/beach_item/${item.id}`}>Ətraflı</Link></button>
                                     <div className="stars">
                                         <i className="far fa-star"></i>
                                         <i className="far fa-star"></i>
