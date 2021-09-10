@@ -225,6 +225,16 @@ main .title {
   margin-bottom: 20px;
 }
 
+main .title a {
+  color: #333;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+main .title a:hover {
+  color: black;
+}
+
 main hr {
   position: absolute;
   width: 100px;

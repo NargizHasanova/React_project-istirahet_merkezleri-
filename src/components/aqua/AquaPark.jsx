@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { aquaPark } from '../state/state'
-import './main/_main.scss'
+import { aquaPark } from '../../state/state'
+import '../main/_main.scss'
 
 export default function AquaPark() {
     return (
@@ -17,7 +17,7 @@ export default function AquaPark() {
                                 </figure>
                                 <h3>{item.title}</h3>
                                 <div className="rate">
-                                    <button><Link to="/">Ətraflı</Link></button>
+                                    <button><Link to={`/aqua_item/${item.id}`}>Ətraflı</Link></button>
                                     <div className="stars">
                                         <i className="far fa-star"></i>
                                         <i className="far fa-star"></i>

@@ -8,7 +8,7 @@ export default function MainTop() {
     const [showMore, setShowMore] = useState(false)
     return (
         <div className="main__top">
-            <h1 className="title">Aqua Parklar<hr /></h1>
+            <h1 className="title"><Link to="/aqua">Aqua Parklar</Link><hr /></h1>
             <div className="beach__cards">
                 {sliceAqua.map(item => {
                     return (
@@ -19,7 +19,7 @@ export default function MainTop() {
                             </figure>
                             <h3>{item.title}</h3>
                             <div className="rate">
-                                <button><Link to="/">Ətraflı</Link></button>
+                                <button><Link to={`/aqua_item/${item.id}`}>Ətraflı</Link></button>
                                 <div className="stars">
                                     <i className="far fa-star"></i>
                                     <i className="far fa-star"></i>

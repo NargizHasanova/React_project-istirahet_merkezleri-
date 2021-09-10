@@ -1,14 +1,14 @@
 import { useHistory, useParams } from "react-router"
-import { beach } from "../../state/state"
-import './_cardItem.scss'
+import { aquaPark } from "../../state/state"
+import '../beach/_item.scss'
 import user from '../../state/images/user.svg'
-import CommentItem from "./CommentItem"
 import { useContext, useState } from "react"
 import { CommentContext } from "../../Context"
+import CommentItem from "../beach/CommentItem"
 
-export default function CardItem() {
+export default function AquaParkItem() {
     const { id } = useParams()
-    const filtered = beach.filter(item => item.id === parseInt(id))
+    const filtered = aquaPark.filter(item => item.id === parseInt(id))
     const history = useHistory()
     const { comment, setComment } = useContext(CommentContext)
     const [addValue, setAddValue] = useState("")
@@ -69,3 +69,4 @@ export default function CardItem() {
         </>
     )
 }
+

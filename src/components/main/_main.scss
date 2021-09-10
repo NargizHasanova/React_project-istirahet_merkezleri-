@@ -38,6 +38,15 @@ main {
         color: #333;
         font-weight: 600;
         margin-bottom: 20px;
+
+        a {
+            color: #333;
+            transition: 0.2s;
+
+            &:hover {
+                color: black;
+            }
+        }
     }
 
     hr {

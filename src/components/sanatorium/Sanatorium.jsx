@@ -1,6 +1,6 @@
-import { sanatorium } from '../state/state'
+import { sanatorium } from '../../state/state'
 import { Link } from 'react-router-dom'
-import './main/_main.scss'
+import '../main/_main.scss'
 
 export default function Sanatorium() {
     return (
@@ -17,7 +17,7 @@ export default function Sanatorium() {
                                 </figure>
                                 <h3>{item.title}</h3>
                                 <div className="rate">
-                                    <button><Link to="/">Ətraflı</Link></button>
+                                    <button><Link to={`/sanatorium_item/${item.id}`}>Ətraflı</Link></button>
                                     <div className="stars">
                                         <i className="far fa-star"></i>
                                         <i className="far fa-star"></i>

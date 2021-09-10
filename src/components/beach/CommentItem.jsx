@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react'
 import { CommentContext } from '../../Context'
-import './_cardItem.scss'
+import './_item.scss'
 import user from '../../state/images/user.svg'
 
 
