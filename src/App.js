@@ -14,6 +14,7 @@ import SanatoriumItem from './components/sanatorium/SanatoriumItem';
 
 
 function App() {
+
   return (
     <BrowserRouter>
       <Switch>
