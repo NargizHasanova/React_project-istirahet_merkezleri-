@@ -1,4 +1,3 @@
-
 import { BrowserRouter } from 'react-router-dom';
 import { Switch, Route } from 'react-router';
 import AquaPark from './components/aqua/AquaPark';
@@ -13,8 +12,8 @@ import AquaParkItem from './components/aqua/AquaParkItem';
 import SanatoriumItem from './components/sanatorium/SanatoriumItem';
 
 
-function App() {
 
+function App() {
   return (
     <BrowserRouter>
       <Switch>
