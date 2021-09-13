@@ -112,3 +112,16 @@ main {
 
     }
 }
+
+.red {
+    color: #FF9400 !important;
+    animation: heartbeat 0.15s alternate linear;
+    animation-timing-function: ease;
+
+}
+
+@keyframes heartbeat {
+    to {
+        transform: scale(1.3);
+    }
+}

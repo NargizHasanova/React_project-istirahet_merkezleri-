@@ -83,7 +83,7 @@ header .header__top--add .plus-btn i {
   transition: 0.3s;
 }
 
-header .header__top--add span {
+header .header__top--add span a {
   color: #fff;
 }
 
@@ -96,6 +96,10 @@ header .header__top--add span {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+}
+
+.header__bottom .active {
+  border-bottom: 3px solid #fff !important;
 }
 
 .header__bottom nav {
@@ -305,6 +309,28 @@ main .beach__cards--item .rate button a:hover {
   text-decoration: underline;
 }
 
+.red {
+  color: #FF9400 !important;
+  -webkit-animation: heartbeat 0.15s alternate linear;
+          animation: heartbeat 0.15s alternate linear;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+}
+
+@-webkit-keyframes heartbeat {
+  to {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+
+@keyframes heartbeat {
+  to {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+}
+
 footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -396,6 +422,97 @@ footer .footer__right__icons i {
   cursor: pointer;
 }
 
+#blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 20px;
+}
+
+#blog .blog {
+  padding: 40px 30px;
+  width: 1000px;
+  background-color: #fff;
+  margin-bottom: -100px;
+}
+
+#blog .blog h2 {
+  font-weight: 500;
+  margin-bottom: 30px;
+  font-size: 31px;
+}
+
+#blog .blog .blog__form .blog__form--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+#blog .blog .blog__form .blog__form--item input {
+  border: 1px solid #9e9e9e;
+  border-radius: 2px;
+  padding: 10px;
+  width: 60%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#blog .blog .blog__form .blog__form--item select {
+  width: 15%;
+  padding: 8px;
+  border: 1px solid #9e9e9e;
+}
+
+#blog .blog .blog__form .blog__form--item textarea {
+  border: 1px solid #9e9e9e;
+  width: 60%;
+}
+
+#blog .blog .blog__form .blog__form--item h3 {
+  font-weight: 400;
+  font-size: 20px;
+  width: 20%;
+}
+
+#blog .blog .blog__form .blog__form--item .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+#blog .blog .blog__form .blog__form--item .price input {
+  padding: 8px;
+  width: 31%;
+}
+
+#blog .blog .blog__form .send__btn {
+  border: 1px solid gray;
+  padding: 10px 5px;
+  width: 145px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #F48B0E;
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
+  margin-top: 15px;
+}
+
+#blog .blog .blog__form .send__btn:hover {
+  background-color: #DB760A;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -420,6 +537,10 @@ button {
 
 button {
   cursor: pointer;
+}
+
+input {
+  font-family: 'Roboto', sans-serif !important;
 }
 
 img {

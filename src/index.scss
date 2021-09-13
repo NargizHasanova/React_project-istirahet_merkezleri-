@@ -3,6 +3,7 @@
 @import './components/header/_header.scss';
 @import './components/main/_main.scss';
 @import './components/footer/_footer.scss';
+@import './components/addBlog/addBlog';
 
 
 * {
@@ -28,6 +29,10 @@ button {
 
 button {
     cursor: pointer;
+}
+
+input {
+    font-family: 'Roboto', sans-serif !important;
 }
 
 img {

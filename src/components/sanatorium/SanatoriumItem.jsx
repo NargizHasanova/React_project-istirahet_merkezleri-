@@ -6,6 +6,14 @@ import { useContext, useState } from "react"
 import { CommentContext } from "../../Context"
 import CommentItem from "../beach/CommentItem"
 
+// Import Swiper 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import SwiperCore, { Navigation, Thumbs } from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([Navigation, Thumbs]);
+
 export default function SanatoriumItem() {
     const { id } = useParams()
     const filtered = sanatorium.filter(item => item.id === parseInt(id))
@@ -17,6 +25,8 @@ export default function SanatoriumItem() {
         setComment([{ id: Date.now(), comment: addValue }, ...comment])
         setAddValue("")
     }
+
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <>
             <div onClick={() => history.goBack()} className="pageBack">
@@ -26,12 +36,65 @@ export default function SanatoriumItem() {
             {filtered.map(item => (
                 <div key={item.id} className="card__item__container">
                     <figure className="photo-gallery">
-                        <img src={item.img} alt="" />
+                        <Swiper
+                            style={{
+                                "--swiper-navigation-color": "#fff",
+                                "--swiper-pagination-color": "#fff",
+                            }}
+                            spaceBetween={10}
+                            navigation={true}
+                            thumbs={{ swiper: thumbsSwiper }}
+                            className="mySwiper2"
+                        >
+                            <SwiperSlide>
+                                <img src={item.img1} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={item.img2} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={item.img3} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={item.img4} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={item.img5} alt="" />
+                            </SwiperSlide>
+                        </Swiper>
+                        <Swiper
+                            onSwiper={setThumbsSwiper}
+                            spaceBetween={10}
+                            slidesPerView={4}
+                            freeMode={true}
+                            watchSlidesProgress={true}
+                            className="mySwiper"
+                        >
+                            <SwiperSlide>
+                                <img src={item.img1} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={item.img2} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={item.img3} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={item.img4} alt="" />
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={item.img5} alt="" />
+                            </SwiperSlide>
+                        </Swiper>
                     </figure>
                     <div className="card__desc">
                         <h2>{item.title}</h2>
                         <p>{item.desc}</p>
                         <div>
+                            <div className="card__contact">
+                                <i className="fas fa-file-invoice-dollar"></i>
+                                <span>{item.price}</span>
+                            </div>
                             <div className="card__contact">
                                 <i className="fas fa-map-marker-alt"></i>
                                 <span>{item.map}</span>
@@ -52,6 +115,7 @@ export default function SanatoriumItem() {
                             <img src={user} alt="profile" />
                         </figure>
                         <input
+                            className="add-input"
                             type="text"
                             placeholder="şərh yaz..."
                             value={addValue}

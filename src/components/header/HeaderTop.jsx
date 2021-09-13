@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 export default function HeaderTop() {
@@ -12,7 +13,7 @@ export default function HeaderTop() {
             </form>
             <div className="header__top--add">
                 <button className="plus-btn"><i className="fas fa-plus-circle"></i></button>
-                <span>Elan yerləşdir</span>
+                <span><Link to="/addBlog">Elan yerləşdir</Link></span>
             </div>
         </div>
     )

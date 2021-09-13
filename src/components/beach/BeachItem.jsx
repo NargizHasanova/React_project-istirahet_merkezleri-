@@ -6,16 +6,10 @@ import CommentItem from "./CommentItem";
 import { useContext, useState } from "react";
 import { CommentContext } from "../../Context";
 
-// Import Swiper React components
+// Import Swiper 
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/swiper-bundle.css";
-
-
-import SwiperCore, {
-    Navigation, Thumbs
-} from 'swiper';
+import SwiperCore, { Navigation, Thumbs } from 'swiper';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Thumbs]);
@@ -35,7 +29,7 @@ export default function CardItem() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <>
-      
+
       <div onClick={() => history.goBack()} className="pageBack">
         <i className="fas fa-chevron-left"></i>
         <span>geri</span>
@@ -43,76 +37,65 @@ export default function CardItem() {
       {filtered.map((item) => (
         <div key={item.id} className="card__item__container">
           <figure className="photo-gallery">
-          <Swiper
-        style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
-        }}
-        spaceBetween={10}
-        navigation={true}
-        // thumbs={{ swiper: thumbsSwiper }}
-        className="mySwiper2"
-      >
-        <SwiperSlide>
-          <img src={item.img} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={item.img} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={item.img} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={item.img} />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={item.img} />
-        </SwiperSlide>
-      </Swiper>
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
-        </SwiperSlide>
-      </Swiper>
+            <Swiper
+              style={{
+                "--swiper-navigation-color": "#fff",
+                "--swiper-pagination-color": "#fff",
+              }}
+              spaceBetween={10}
+              navigation={true}
+              thumbs={{ swiper: thumbsSwiper }}
+              className="mySwiper2"
+            >
+              <SwiperSlide>
+                <img src={item.img1} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={item.img2} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={item.img3} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={item.img4} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={item.img5} alt="" />
+              </SwiperSlide>
+            </Swiper>
+            <Swiper
+              onSwiper={setThumbsSwiper}
+              spaceBetween={10}
+              slidesPerView={4}
+              freeMode={true}
+              watchSlidesProgress={true}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <img src={item.img1} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={item.img2} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={item.img3} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={item.img4} alt="" />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img src={item.img5} alt="" />
+              </SwiperSlide>
+            </Swiper>
           </figure>
           <div className="card__desc">
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
             <div>
+              <div className="card__contact">
+                <i className="fas fa-file-invoice-dollar"></i>
+                <span>{item.price}</span>
+              </div>
               <div className="card__contact">
                 <i className="fas fa-map-marker-alt"></i>
                 <span>{item.map}</span>
@@ -133,6 +116,7 @@ export default function CardItem() {
               <img src={user} alt="profile" />
             </figure>
             <input
+              className="add-input"
               type="text"
               placeholder="şərh yaz..."
               value={addValue}

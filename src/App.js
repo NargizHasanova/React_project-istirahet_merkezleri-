@@ -10,6 +10,7 @@ import SimpleHeader from './components/header/SimpleHeader';
 import BeachItem from './components/beach/BeachItem';
 import AquaParkItem from './components/aqua/AquaParkItem';
 import SanatoriumItem from './components/sanatorium/SanatoriumItem';
+import AddBlog from './components/addBlog/AddBlog';
 
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/beach_item/:id"><SimpleHeader /><BeachItem /></Route>
         <Route path="/aqua_item/:id"><SimpleHeader /><AquaParkItem /></Route>
         <Route path="/sanatorium_item/:id"><SimpleHeader /><SanatoriumItem /></Route>
+        <Route path="/addBlog"><SimpleHeader /><AddBlog /></Route>
       </Switch>
       <Footer />
     </BrowserRouter>

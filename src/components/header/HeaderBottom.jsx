@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import video from './img&video/header.mp4'
 import reserveCover from './img&video/headerImg1.jpg'
 
@@ -8,9 +8,9 @@ export default function HeaderBottom() {
             <nav>
                 <ul>
                     <li><Link to="/">Ana səhifə</Link></li>
-                    <li><Link to="/beach">Çimərliklər</Link></li>
-                    <li><Link to="/aqua">Aqua parklar</Link></li>
-                    <li><Link to="/sanatorium">Sanatoriyalar</Link></li>
+                    <li><NavLink activeclassname="active" to="/beach">Çimərliklər</NavLink></li>
+                    <li><NavLink activeclassname="active" to="/aqua">Aqua parklar</NavLink></li>
+                    <li><NavLink activeclassname="active" to="/sanatorium">Sanatoriyalar</NavLink></li>
                 </ul>
             </nav>
             <div className="slider">

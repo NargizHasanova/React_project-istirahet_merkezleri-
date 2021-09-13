@@ -28,6 +28,7 @@ export default function CommentItem({ item }) {
             if (item.id === id) {
                 setChangeValue(item.comment)
             }
+            return item
         })
         setUpdatedId(id)
     }
@@ -42,6 +43,7 @@ export default function CommentItem({ item }) {
         setBtnVisibility(!btnVisibility)
         setDots(!dots)
     }
+
     function deleteComment(id) {
         setComment(
             comment.filter(item => {
@@ -55,11 +57,10 @@ export default function CommentItem({ item }) {
         setBtnVisibility(!btnVisibility)
     }
     return (
-
         <div className="comment__item">
             <div className="comment">
                 <figure>
-                    <img src={user} alt="profile" />
+                    <img className="comment__item--user" src={user} alt="profile" />
                 </figure>
                 {input && <input
                     readOnly
@@ -87,7 +88,6 @@ export default function CommentItem({ item }) {
 
 
             </div>
-
         </div>
     )
 
