@@ -1,3 +1,5 @@
+@import '../../assets/scss/variables';
+
 header {
     position: relative;
     display: flex;
@@ -147,4 +149,136 @@ header {
             font-weight: 900;
         }
     }
+}
+
+// mobile menu styles ===============
+.mobile__header {
+    background-color: $mainColor;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.22);
+    padding: 20px;
+    z-index: 2;
+
+    .header__top {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 1;
+        margin-bottom: 10px;
+
+
+        form input {
+            padding: 5px;
+            border: 1px solid #474F4E;
+            border-radius: 3px;
+            margin-right: 5px;
+            background-color: #F9F4EF;
+        }
+
+        form button {
+            padding: 5px;
+            border: 1px solid #474F4E;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: #F9F4EF;
+        }
+
+        &--add {
+            border: 1px solid gray;
+            padding: 5px;
+            cursor: pointer;
+            background-color: #fff;
+            border-radius: 3px;
+
+            .plus-btn {
+                margin-right: 5px;
+
+                i {
+                    color: $mainColor;
+                    background-color: #fff;
+                    font-size: 16px;
+                }
+            }
+
+            span a {
+                color: #333;
+            }
+        }
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+
+
+        li a {
+            color: #fff;
+            padding: 17px 0;
+            border-bottom: 3px solid transparent;
+            transition: 0.2s;
+
+            &:hover {
+                border-bottom: 3px solid #fff;
+            }
+        }
+    }
+}
+
+
+
+
+.burger__wrapper {
+
+
+    .menu-bar-icon {
+        color: #F9F4EF;
+        font-size: 24px;
+    }
+
+    .close-menu {
+        color: #333;
+        font-size: 24px;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+    }
+
+    ul {
+        // display: none;
+        background-color: #F9F4EF;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        right: -100%;
+        background-color: #fff;
+        transition: 0.5s;
+        z-index: 1;
+        padding: 70px 30px 30px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 3;
+
+        li {
+            padding: 25px;
+
+            a {
+                color: #333;
+                font-weight: 500;
+                font-size: 25px;
+            }
+        }
+
+    }
+}
+
+.showMenu {
+    right: 0 !important;
+}
+
+.hideMenu {
+    right: -100%;
 }

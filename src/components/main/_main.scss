@@ -6,6 +6,7 @@ main {
     justify-content: center;
     align-items: center;
     margin-top: 30px;
+    padding: 0 20px;
 
     .main__top {
         max-width: 1000px;
@@ -29,6 +30,10 @@ main {
                 margin-right: 10px;
                 color: #706C6C;
             }
+        }
+
+        .title__intro {
+            text-align: center;
         }
     }
 

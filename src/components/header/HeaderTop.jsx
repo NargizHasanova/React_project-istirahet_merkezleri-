@@ -5,10 +5,10 @@ export default function HeaderTop() {
     return (
         <div className="header__top">
             <div className="header__top--logo">
-                <h3>Logo</h3>
+                <h3><Link to="/">Logo</Link></h3>
             </div>
             <form>
-                <input type="text" placeholder="axtar" />
+                <input type="text" placeholder="axtar..." />
                 <button>Axtar</button>
             </form>
             <div className="header__top--add">

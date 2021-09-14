@@ -3,12 +3,16 @@ import { Link } from "react-router-dom"
 import { useContext } from "react/cjs/react.development"
 import { AquaContext } from "../../Context"
 import { aquaPark } from "../../state/state"
+import { useMediaQuery } from 'react-responsive'
+
 
 let sliceAquaData = aquaPark.slice(0, 3)
 
 export default function MainTop() {
     const { aquaData, setAquaData } = useContext(AquaContext)
     const [showMore, setShowMore] = useState(false)
+    const isTablet768 = useMediaQuery({ query: '(max-width: 768px)' })
+    const isBigScreen = useMediaQuery({ query: '(min-width: 1024px)' })
 
 
     function likeOnClick(id) {
@@ -23,7 +27,8 @@ export default function MainTop() {
     }
     return (
         <div className="main__top">
-            <h1 className="title"><Link to="/aqua">Aqua Parklar</Link><hr /></h1>
+            {isTablet768 && <h1 className="title">Aqua Parklar<hr /></h1>}
+            {isBigScreen && <h1 className="title"><Link to="/aqua">Aqua Parklar</Link><hr /></h1>}
             <div className="beach__cards">
                 {sliceAquaData.map(item => {
                     return (
@@ -34,7 +39,8 @@ export default function MainTop() {
                             </figure>
                             <h3>{item.title}</h3>
                             <div className="rate">
-                                <button><Link to={`/aqua_item/${item.id}`}>Ətraflı</Link></button>
+                                {isBigScreen && <button><Link to={`/aqua_item/${item.id}`}>Ətraflı</Link></button>}
+                                {isTablet768 && <button><Link to={`/aqua_mobile_item/${item.id}`}>Ətraflı</Link></button>}
                                 <div className="stars">
                                     <i className="far fa-star"></i>
                                     <i className="far fa-star"></i>

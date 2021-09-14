@@ -2,12 +2,16 @@ import { beach } from "../../state/state"
 import { Link } from "react-router-dom"
 import { useContext, useState } from "react"
 import { BeachContext } from "../../Context"
+import { useMediaQuery } from 'react-responsive'
+
 
 let sliceBeachData = beach.slice(0, 3)
 
 export default function MainTop() {
     const { beachData, setBeachData } = useContext(BeachContext)
     const [showMore, setShowMore] = useState(false)
+    const isTablet768 = useMediaQuery({ query: '(max-width: 768px)' })
+    const isBigScreen = useMediaQuery({ query: '(min-width: 1024px)' })
 
 
     function likeOnClick(id) {
@@ -23,7 +27,8 @@ export default function MainTop() {
 
     return (
         <div className="main__top">
-            <h1 className="title"><Link to="/beach">Çimərliklər</Link><hr /></h1>
+            {isTablet768 && <h1 className="title">Çimərliklər<hr /></h1>}
+            {isBigScreen && <h1 className="title"><Link to="/beach">Çimərliklər</Link><hr /></h1>}
             <div id="beach" className="beach__cards">
                 {sliceBeachData.map(item => {
                     return (
@@ -34,7 +39,8 @@ export default function MainTop() {
                             </figure>
                             <h3>{item.title}</h3>
                             <div className="rate">
-                                <button><Link to={`/beach_item/${item.id}`}>Ətraflı</Link></button>
+                                {isBigScreen && <button><Link to={`/beach_item/${item.id}`}>Ətraflı</Link></button>}
+                                {isTablet768 && <button><Link to={`/beach_mobile_item/${item.id}`}>Ətraflı</Link></button>}
                                 <div className="stars">
                                     <i className="far fa-star"></i>
                                     <i className="far fa-star"></i>

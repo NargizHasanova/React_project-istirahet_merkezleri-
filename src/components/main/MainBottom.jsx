@@ -3,12 +3,16 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { SanatoriumContext } from "../../Context"
 import { sanatorium } from "../../state/state"
+import { useMediaQuery } from 'react-responsive'
+
 
 let sliceSanatoriumData = sanatorium.slice(0, 3)
 
 export default function MainTop() {
     const { sanatoriumData, setSanatoriumData } = useContext(SanatoriumContext)
     const [showMore, setShowMore] = useState(false)
+    const isTablet768 = useMediaQuery({ query: '(max-width: 768px)' })
+    const isBigScreen = useMediaQuery({ query: '(min-width: 1024px)' })
 
 
     function likeOnClick(id) {
@@ -24,7 +28,8 @@ export default function MainTop() {
 
     return (
         <div className="main__top">
-            <h1 className="title"><Link to="/sanatorium">Sanatoriyalar</Link><hr /></h1>
+            {isTablet768 && <h1 className="title">Sanatoriyalar<hr /></h1>}
+            {isBigScreen && <h1 className="title"><Link to="/sanatorium">Sanatoriyalar</Link><hr /></h1>}
             <div className="beach__cards">
                 {sliceSanatoriumData.map(item => {
                     return (
@@ -35,7 +40,8 @@ export default function MainTop() {
                             </figure>
                             <h3>{item.title}</h3>
                             <div className="rate">
-                                <button><Link to={`/sanatorium_item/${item.id}`}>Ətraflı</Link></button>
+                                {isBigScreen && <button><Link to={`/sanatorium_item/${item.id}`}>Ətraflı</Link></button>}
+                                {isTablet768 && <button><Link to={`/sanatorium_mobile_item/${item.id}`}>Ətraflı</Link></button>}
                                 <div className="stars">
                                     <i className="far fa-star"></i>
                                     <i className="far fa-star"></i>

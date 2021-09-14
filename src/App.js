@@ -11,6 +11,10 @@ import BeachItem from './components/beach/BeachItem';
 import AquaParkItem from './components/aqua/AquaParkItem';
 import SanatoriumItem from './components/sanatorium/SanatoriumItem';
 import AddBlog from './components/addBlog/AddBlog';
+import BeachMobile from './components/mobile/BeachMobile';
+import AquaMobile from './components/mobile/AquaMobile';
+import SanatoriumMobile from './components/mobile/SanatoriumMobile';
+import MobileHeader from './components/mobile/MobileHeader';
 
 
 
@@ -26,6 +30,13 @@ function App() {
         <Route path="/aqua_item/:id"><SimpleHeader /><AquaParkItem /></Route>
         <Route path="/sanatorium_item/:id"><SimpleHeader /><SanatoriumItem /></Route>
         <Route path="/addBlog"><SimpleHeader /><AddBlog /></Route>
+        <Route path="/beach_mobile"><BeachMobile /></Route>
+        <Route path="/aqua_mobile"><AquaMobile /></Route>
+        <Route path="/sanatorium_mobile"><SanatoriumMobile /></Route>
+        <Route path="/sanatorium_mobile_item/:id"><MobileHeader /><SanatoriumItem /></Route>
+        <Route path="/aqua_mobile_item/:id"><MobileHeader /><AquaParkItem /></Route>
+        <Route path="/beach_mobile_item/:id"><MobileHeader /><SanatoriumItem /></Route>
+        <Route path="/addBlog_mobile"><MobileHeader /><AddBlog /></Route>
       </Switch>
       <Footer />
     </BrowserRouter>
