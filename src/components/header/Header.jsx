@@ -6,7 +6,6 @@ import MobileHeader from '../mobile/MobileHeader'
 export default function Header() {
     const isTablet768 = useMediaQuery({ query: '(max-width: 768px)' })
     const isBigScreen = useMediaQuery({ query: '(min-width: 1024px)' })
-    const isMobile425 = useMediaQuery({ query: '(max-width: 425px)' })
     return (
         <>
             {isBigScreen &&

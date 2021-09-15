@@ -2,9 +2,9 @@ import { useHistory, useParams } from "react-router";
 import { beach } from "../../state/state";
 import "./_item.scss";
 import user from "../../state/images/user.svg";
-import CommentItem from "./CommentItem";
+import BeachCommentItem from "./BeachCommentItem";
 import { useContext, useState } from "react";
-import { CommentContext } from "../../Context";
+import { BeachCommentContext } from "../../Context";
 
 // Import Swiper 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,15 +14,15 @@ import SwiperCore, { Navigation, Thumbs } from 'swiper';
 // install Swiper modules
 SwiperCore.use([Navigation, Thumbs]);
 
-export default function CardItem() {
+export default function BeachItem() {
   const { id } = useParams();
   const filtered = beach.filter((item) => item.id === parseInt(id));
   const history = useHistory();
-  const { comment, setComment } = useContext(CommentContext);
   const [addValue, setAddValue] = useState("");
+  const { beachComment, setBeachComment } = useContext(BeachCommentContext)
 
   function addInput() {
-    setComment([{ id: Date.now(), comment: addValue }, ...comment]);
+    setBeachComment([{ id: Date.now(), comment: addValue, allowEdit: true }, ...beachComment]);
     setAddValue("");
   }
 
@@ -109,7 +109,7 @@ export default function CardItem() {
         </div>
       ))}
       <div className="comments__section">
-        <h2>Şərhlər({comment.length})</h2>
+        <h2>Şərhlər({beachComment.length})</h2>
         <div className="add__form">
           <div className="comment">
             <figure>
@@ -130,8 +130,8 @@ export default function CardItem() {
           </div>
         </div>
       </div>
-      {comment.map((item) => {
-        return <CommentItem key={item.id} item={item} />;
+      {beachComment.map((item) => {
+        return <BeachCommentItem key={item.id} item={item} />;
       })}
     </>
   );

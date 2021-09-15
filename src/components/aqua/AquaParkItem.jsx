@@ -2,9 +2,10 @@ import { useHistory, useParams } from "react-router"
 import { aquaPark } from "../../state/state"
 import '../beach/_item.scss'
 import user from '../../state/images/user.svg'
-import { useContext, useState } from "react"
-import { CommentContext } from "../../Context"
-import CommentItem from "../beach/CommentItem"
+import { useState } from "react"
+import AquaCommentItem from "./AquaCommentItem"
+import { useContext } from "react"
+import { AquaCommentContext } from "../../Context"
 
 // Import Swiper 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,11 +19,11 @@ export default function AquaParkItem() {
     const { id } = useParams()
     const filtered = aquaPark.filter(item => item.id === parseInt(id))
     const history = useHistory()
-    const { comment, setComment } = useContext(CommentContext)
     const [addValue, setAddValue] = useState("")
+    const { aquaComment, setAquaComment } = useContext(AquaCommentContext)
 
     function addInput() {
-        setComment([{ id: Date.now(), comment: addValue }, ...comment])
+        setAquaComment([{ id: Date.now(), comment: addValue, allowEdit: true }, ...aquaComment])
         setAddValue("")
     }
 
@@ -108,7 +109,7 @@ export default function AquaParkItem() {
                 </div>
             ))}
             <div className="comments__section">
-                <h2>Şərhlər({comment.length})</h2>
+                <h2>Şərhlər({aquaComment.length})</h2>
                 <div className="add__form">
                     <div className="comment">
                         <figure>
@@ -127,10 +128,9 @@ export default function AquaParkItem() {
                     </div>
                 </div>
             </div>
-            {comment.map(item => {
-                return <CommentItem key={item.id} item={item} />
-            })}
+            {aquaComment.map(item => (
+                <AquaCommentItem key={item.id} item={item} />
+            ))}
         </>
     )
 }
-

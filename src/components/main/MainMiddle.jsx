@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive'
 
 let sliceAquaData = aquaPark.slice(0, 3)
 
-export default function MainTop() {
+export default function MainMiddle() {
     const { aquaData, setAquaData } = useContext(AquaContext)
     const [showMore, setShowMore] = useState(false)
     const isTablet768 = useMediaQuery({ query: '(max-width: 768px)' })

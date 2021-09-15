@@ -1,18 +1,17 @@
 import { useContext, useState } from 'react'
-import { CommentContext } from '../../Context'
 import './_item.scss'
 import user from '../../state/images/user.svg'
+import { BeachCommentContext } from '../../Context'
 
 
-export default function CommentItem({ item }) {
-
-    const { comment, setComment } = useContext(CommentContext)
+export default function BeachCommentItem({ item }) {
     const [pen, setPen] = useState(false)
     const [dots, setDots] = useState(true)
     const [input, setInput] = useState(true)
     const [btnVisibility, setBtnVisibility] = useState(false)
     const [changeValue, setChangeValue] = useState(item.comment)
     const [updatedId, setUpdatedId] = useState(null)
+    const { beachComment, setBeachComment } = useContext(BeachCommentContext)
 
 
     function dotChange() {
@@ -24,7 +23,7 @@ export default function CommentItem({ item }) {
         setPen(!pen)
         setDots(!dots)
         setBtnVisibility(!btnVisibility)
-        comment.map(item => {
+        beachComment.map(item => {
             if (item.id === id) {
                 setChangeValue(item.comment)
             }
@@ -33,7 +32,7 @@ export default function CommentItem({ item }) {
         setUpdatedId(id)
     }
     function saveChanges() {
-        setComment(comment.map(item => {
+        setBeachComment(beachComment.map(item => {
             if (item.id === updatedId) {
                 item.comment = changeValue
             }
@@ -45,8 +44,8 @@ export default function CommentItem({ item }) {
     }
 
     function deleteComment(id) {
-        setComment(
-            comment.filter(item => {
+        setBeachComment(
+            beachComment.filter(item => {
                 return item.id !== id
             })
         )
@@ -75,18 +74,16 @@ export default function CommentItem({ item }) {
                         setChangeValue(e.target.value)
                     }}
                 />}
-                {btnVisibility &&
+                {btnVisibility && item.allowEdit &&
                     <div className="edit-btns">
                         <button onClick={saveChanges} className="btn">yenilə</button>
                         <button onClick={cancel} className="btn">ləğv et</button>
                     </div>}
-                {dots && <i onClick={() => dotChange(item.id)} className="fas fa-ellipsis-h dots"></i>}
-                {pen && <div className="edit">
+                {dots && item.allowEdit && <i onClick={() => dotChange(item.id)} className="fas fa-ellipsis-h dots"></i>}
+                {pen && item.allowEdit && <div className="edit">
                     <i onClick={() => updateComment(item.id)} className="fas fa-pen pen"></i>
                     <i onClick={() => deleteComment(item.id)} className="fas fa-trash"></i>
                 </div>}
-
-
             </div>
         </div>
     )

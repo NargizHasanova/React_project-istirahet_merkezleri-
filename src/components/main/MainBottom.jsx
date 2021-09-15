@@ -8,7 +8,7 @@ import { useMediaQuery } from 'react-responsive'
 
 let sliceSanatoriumData = sanatorium.slice(0, 3)
 
-export default function MainTop() {
+export default function MainBottom() {
     const { sanatoriumData, setSanatoriumData } = useContext(SanatoriumContext)
     const [showMore, setShowMore] = useState(false)
     const isTablet768 = useMediaQuery({ query: '(max-width: 768px)' })

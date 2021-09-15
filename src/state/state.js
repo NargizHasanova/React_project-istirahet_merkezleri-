@@ -394,7 +394,29 @@ export const sanatorium = [
     },
 ]
 
-export const comments = [
+export const beachComments = [
+    {
+        id: 1,
+        comment: "Burda olmuşam.Əla yerdi!Hərkəsə tövsiyyə edirəm!"
+    },
+    {
+        id: 2,
+        comment: "Belədəəə....Xoşlamadım!Yenədə özünüz bilin.."
+    },
+]
+
+export const aquaComments = [
+    {
+        id: 1,
+        comment: "Burda olmuşam.Əla yerdi!Hərkəsə tövsiyyə edirəm!"
+    },
+    {
+        id: 2,
+        comment: "Belədəəə....Xoşlamadım!Yenədə özünüz bilin.."
+    },
+]
+
+export const sanComments = [
     {
         id: 1,
         comment: "Burda olmuşam.Əla yerdi!Hərkəsə tövsiyyə edirəm!"

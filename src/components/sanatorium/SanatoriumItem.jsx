@@ -3,8 +3,8 @@ import { sanatorium } from "../../state/state"
 import '../beach/_item.scss'
 import user from '../../state/images/user.svg'
 import { useContext, useState } from "react"
-import { CommentContext } from "../../Context"
-import CommentItem from "../beach/CommentItem"
+import SanCommentItem from "./SanCommentItem"
+import { SanCommentContext } from "../../Context"
 
 // Import Swiper 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,14 +18,13 @@ export default function SanatoriumItem() {
     const { id } = useParams()
     const filtered = sanatorium.filter(item => item.id === parseInt(id))
     const history = useHistory()
-    const { comment, setComment } = useContext(CommentContext)
     const [addValue, setAddValue] = useState("")
+    const { sanComment, setSanComment } = useContext(SanCommentContext)
 
     function addInput() {
-        setComment([{ id: Date.now(), comment: addValue }, ...comment])
+        setSanComment([{ id: Date.now(), comment: addValue, allowEdit: true }, ...sanComment])
         setAddValue("")
     }
-
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     return (
         <>
@@ -108,7 +107,7 @@ export default function SanatoriumItem() {
                 </div>
             ))}
             <div className="comments__section">
-                <h2>Şərhlər({comment.length})</h2>
+                <h2>Şərhlər({sanComment.length})</h2>
                 <div className="add__form">
                     <div className="comment">
                         <figure>
@@ -127,8 +126,8 @@ export default function SanatoriumItem() {
                     </div>
                 </div>
             </div>
-            {comment.map(item => {
-                return <CommentItem key={item.id} item={item} />
+            {sanComment.map(item => {
+                return <SanCommentItem key={item.id} item={item} />
             })}
         </>
     )
