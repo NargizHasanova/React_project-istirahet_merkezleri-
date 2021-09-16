@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { useContext } from "react/cjs/react.development"
+import { useContext } from "react"
 import { AquaContext } from "../../Context"
 import { aquaPark } from "../../state/state"
 import { useMediaQuery } from 'react-responsive'
@@ -9,10 +9,11 @@ import { useMediaQuery } from 'react-responsive'
 let sliceAquaData = aquaPark.slice(0, 3)
 
 export default function MainMiddle() {
-    const { aquaData, setAquaData } = useContext(AquaContext)
+
     const [showMore, setShowMore] = useState(false)
     const isTablet768 = useMediaQuery({ query: '(max-width: 768px)' })
     const isBigScreen = useMediaQuery({ query: '(min-width: 1024px)' })
+    const { aquaData, setAquaData } = useContext(AquaContext)
 
 
     function likeOnClick(id) {

@@ -35,7 +35,7 @@ function App() {
         <Route path="/sanatorium_mobile"><SanatoriumMobile /></Route>
         <Route path="/sanatorium_mobile_item/:id"><MobileHeader /><SanatoriumItem /></Route>
         <Route path="/aqua_mobile_item/:id"><MobileHeader /><AquaParkItem /></Route>
-        <Route path="/beach_mobile_item/:id"><MobileHeader /><SanatoriumItem /></Route>
+        <Route path="/beach_mobile_item/:id"><MobileHeader /><BeachItem /></Route>
         <Route path="/addBlog_mobile"><MobileHeader /><AddBlog /></Route>
       </Switch>
       <Footer />
