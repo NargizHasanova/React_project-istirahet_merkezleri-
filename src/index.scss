@@ -28,6 +28,11 @@ button {
     background-color: transparent;
 }
 
+textarea,
+select {
+    outline: none;
+}
+
 button {
     cursor: pointer;
 }

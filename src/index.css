@@ -608,15 +608,30 @@ footer .footer__right__icons i {
   font-family: 'Roboto', sans-serif;
 }
 
+#blog .blog .blog__form .blog__form--item input:focus {
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
+}
+
 #blog .blog .blog__form .blog__form--item select {
   width: 15%;
   padding: 8px;
   border: 1px solid #9e9e9e;
 }
 
+#blog .blog .blog__form .blog__form--item select:focus {
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
+}
+
 #blog .blog .blog__form .blog__form--item textarea {
   border: 1px solid #9e9e9e;
   width: 60%;
+}
+
+#blog .blog .blog__form .blog__form--item textarea:focus {
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
 }
 
 #blog .blog .blog__form .blog__form--item h3 {
@@ -658,6 +673,37 @@ footer .footer__right__icons i {
   background-color: #DB760A;
 }
 
+.css-yk16xz-control {
+  width: 250px;
+  border-radius: 2px !important;
+  border-color: #9e9e9e !important;
+}
+
+.css-yk16xz-control:focus {
+  -webkit-box-shadow: 0 0 2px black !important;
+          box-shadow: 0 0 2px black !important;
+}
+
+.css-1pahdxg-control {
+  width: 250px;
+  border-color: #9e9e9e !important;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.css-1pahdxg-control:focus {
+  border-radius: 2px !important;
+  -webkit-box-shadow: 0 0 2px black !important;
+          box-shadow: 0 0 2px black !important;
+}
+
+.css-2b097c-container:focus {
+  -webkit-box-shadow: 0 0 2px black !important;
+          box-shadow: 0 0 2px black !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -679,6 +725,11 @@ button {
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+textarea,
+select {
+  outline: none;
 }
 
 button {

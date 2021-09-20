@@ -1,6 +1,13 @@
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import { useState } from 'react'
+import Select from 'react-select'
+
+const options = [
+    { value: 'beach', label: 'Çimərliklər' },
+    { value: 'aqua', label: 'Aqua Parklar' },
+    { value: 'san', label: 'Sanatoriyalar' }
+]
 
 export default function AddBlog() {
     const [value, setValue] = useState()
@@ -11,12 +18,7 @@ export default function AddBlog() {
                 <div className="blog__form">
                     <div className="blog__form--item">
                         <h3>Kategoriya</h3>
-                        <select name="" id="">
-                            <option value=""></option>
-                            <option value="">Çimərliklər</option>
-                            <option value="">Aqua Parklar</option>
-                            <option value="">Sanatoriyalar</option>
-                        </select>
+                        <Select options={options} />
                     </div>
                     <div className="blog__form--item">
                         <h3>Başlıq</h3>

@@ -27,17 +27,29 @@
                     padding: 10px;
                     width: 60%;
                     font-family: 'Roboto', sans-serif;
+
+                    &:focus {
+                        box-shadow: 0 0 2px black;
+                    }
                 }
 
                 select {
                     width: 15%;
                     padding: 8px;
                     border: 1px solid #9e9e9e;
+
+                    &:focus {
+                        box-shadow: 0 0 2px black;
+                    }
                 }
 
                 textarea {
                     border: 1px solid #9e9e9e;
                     width: 60%;
+
+                    &:focus {
+                        box-shadow: 0 0 2px black;
+                    }
                 }
 
                 h3 {
@@ -76,4 +88,32 @@
             }
         }
     }
+}
+
+.css-yk16xz-control {
+    width: 250px;
+    border-radius: 2px !important;
+    border-color: #9e9e9e !important;
+
+    &:focus {
+        box-shadow: 0 0 2px black !important;
+    }
+
+}
+
+.css-1pahdxg-control {
+    width: 250px;
+    border-color: #9e9e9e !important;
+    box-shadow: 0 0 2px black;
+    box-shadow: none !important;
+
+    &:focus {
+        border-radius: 2px !important;
+        box-shadow: 0 0 2px black !important;
+    }
+}
+
+.css-2b097c-container:focus {
+
+    box-shadow: 0 0 2px black !important;
 }
